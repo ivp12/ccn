@@ -1,0 +1,42 @@
+import sys
+
+class Node:
+    def __init__(self, nodes):
+        self.dist = [sys.maxsize] * nodes
+        self.from_node = [None] * nodes
+
+def main():
+    print("\n\n-------------------- Distance Vector Routing Algorithm -----------")
+    costmat = []
+    nodes = int(input("\n\nEnter the number of nodes: "))
+    print("\nEnter the cost matrix: ")
+    for _ in range(nodes):
+        row = list(map(int, input().split()))
+        costmat.append(row)
+        row[_] = 0
+
+    DVR = [Node(nodes) for _ in range(nodes)]
+
+    for i in range(nodes):
+        for j in range(nodes):
+            DVR[i].dist[j] = costmat[i][j]
+            DVR[i].from_node[j] = j
+
+    for i in range(nodes):
+        for j in range(i + 1, nodes):
+            for k in range(nodes):
+                if DVR[i].dist[j] > costmat[i][k] + DVR[k].dist[j]:
+                    DVR[i].dist[j] = DVR[i].dist[k] + DVR[k].dist[j]
+                    DVR[j].dist[i] = DVR[i].dist[j]
+                    DVR[i].from_node[j] = k
+                    DVR[j].from_node[i] = k
+
+    for i in range(nodes):
+        print(f"\n\nFor router: {i+1}")
+        for j in range(nodes):
+            print(f"\t\nnode {j+1} via {DVR[i].from_node[j]+1} Distance {DVR[i].dist[j]}")
+
+    print(" \n\n ")
+
+if __name__ == "__main__":
+    main()
