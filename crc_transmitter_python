@@ -1,0 +1,27 @@
+msg = input("Enter the Data = ")
+crc = input("Enter the Generator Polynomial = ")
+encoded = ""
+
+encoded += msg
+
+# Append n-1 zeros to encoded message
+encoded += "0" * (len(crc) - 1)
+
+i = 0
+while i <= len(encoded) - len(crc):
+    for j in range(len(crc)):
+        encoded_list = list(encoded)
+        if encoded_list[i + j] == crc[j]:
+            encoded_list[i + j] = '0'
+        else:
+            encoded_list[i + j] = '1'
+        encoded = "".join(encoded_list)
+
+    while i < len(encoded) and encoded[i] != '1':
+        i += 1
+
+print("###### Transmitter End ####")
+print("The Input Data =", msg)
+print("The Generator Polynomial =", crc)
+print("The Remainder =", encoded[-len(crc) + 1:])
+print("The Data Transmitted with Reminder =", msg + encoded[-len(crc) + 1:])
