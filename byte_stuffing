@@ -1,0 +1,15 @@
+a = []
+
+n = input("Enter no of strings: ")
+a.append("flag")
+for i in range(int(n)):
+    inp = input(f"Enter your {i + 1} numbered byte: ")
+    if inp == "esc" or inp == "flag":
+        a.append("esc")
+        a.append(inp)
+    else:
+        a.append(inp)
+a.append("flag")
+print("The frame is: ", a)    
+     
+
