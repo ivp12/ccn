@@ -1,0 +1,15 @@
+packets_available = 0 # Initially 0
+input_packet_size = 4
+output_packet_size = 1
+bucket_capacity = 10
+queries = 4
+
+for i in range(queries):
+    if input_packet_size <= (bucket_capacity - packets_available):
+        packets_available = packets_available + input_packet_size
+        print(f"buffer size = {packets_available} out of bucket size = {bucket_capacity} ")
+    else:
+        print(f"packet loss = {input_packet_size}")
+        print(f"buffer size = {packets_available} out of bucket size = {bucket_capacity} ")
+    packets_available = packets_available - output_packet_size
+    print(f"buffer size = {packets_available} out of bucket size = {bucket_capacity} ")
