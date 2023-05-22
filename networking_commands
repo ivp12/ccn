@@ -1,0 +1,128 @@
+Experiment No. 1
+
+Study of Networking
+Commands
+
+Introduction to Networking commands -
+The operating system consists of various built-in, command-line networking utilities that are 
+used for network troubleshooting. We will see various networking commands which are most 
+essentials for every network administrator.
+
+1. Ping
+Ping is used to testing a network host capacity to interact with another host. Just enter the command 
+Ping, followed by the target host’s name or IP address. The ping utilities seem to be the most common 
+network tool. This is performed by using the Internet Control Message Protocol, which allows the echo 
+packet to be sent to the destination host and a listening mechanism. If the destination host reply to the 
+requesting host, that means the host is reachable. This utility usually gives a basic image of where there 
+may be a specific networking issue,
+For Example: If an Internet connection is not in the office, for instance, the ping utility is used to 
+determine if the problem exists in the office or the Internet provider’s network. The following shows an 
+image of how ping tools to obtain the locally connected router’s connectivity status.
+
+2. NetStat
+Netstat is a Common TCP – IP networking command-line method present in most Windows, Linux, 
+UNIX, and other operating systems. The netstat provides the statistics and information in the use of the 
+current TCP-IP Connection network about the protocol.
+There are various options a user can use with the Netstat command.
+Options are as follows-
+ -a: This will display all connection and ports
+ -b: Shows the executable involved in each connection or hearing port
+ -e: This protocol will combine with the -sand display the ethernet statistics
+ -n: This will display the address and the port number in the form of numerical
+ -o: It will display the ID of each connection for the ownership process.
+ -r: It will display the routing table
+ -v: When used in combination with -b, the link or hearing port sequence for every executable is 
+shown. 
+
+3. Ip Config
+The command IP config will display basic details about the device’s IP address configuration. Just type 
+IP config in the Windows prompt and the IP, subnet mask and default gateway that the current device 
+will be presented. If you have to see full information, then type on command prompt config-all and 
+then you will see full information. There are also choices to assist you in resolving DNS and DHCP issues.
+
+4. Hostname
+To communicate with each and other, the computer needs a unique address. A hostname can be 
+alphabetic or alphanumeric and contain specific symbols used specifically to define a specific node or 
+device in the network. For example, a hostname should have a domain name (TLD) of the top-level and 
+a distance between one and 63 characters when used in a domain name system (DNS) or on the 
+Internet.
+
+5. Tracert
+The tracert command is a Command Prompt command which is used to get the network packet being 
+sent and received and the number of hops required for that packet to reach to target. This command 
+can also be referred to as a traceroute. It provides several details about the path that a packet takes 
+from the source to the specified destination.
+The tracert command is available for the Command Prompt in all Windows operating systems.
+The syntax for Tracert Command
+tracert [-d] [-h MaxHops] [-w TimeOut] target
+There are various options the user can use with tracert command.
+Options for tracert Command are as follows-
+ target: This is the destination, either an IP address or hostname.
+ –d: This option prevents Tracert from resolving IP addresses to hostnames to get faster results.
+ -h MaxHops: This Tracert option specifies the maximum number of hops in the search for the 
+target. If the MaxHops option is not specified the target has not been found by 30 hops, then 
+the tracert command will stop looking.
+ -w timeout: A timeout value must be specified while executing this ping command. It adjusts 
+the amount of time in milliseconds. 
+
+6. Nslookup
+The Nslookup, which stands for name server lookup command, is a network utility command used to 
+obtain information about internet servers. It provides name server information for the DNS (Domain 
+Name System), i.e. the default DNS server’s name and IP Address.
+The syntax for Nslookup is as follows.
+Nslookup
+or
+Nslookup [domain_name]
+
+7. Route
+In IP networks, routing tables are used to direct packets from one subnet to another. The Route 
+command provides the device’s routing tables. To get this result, just type route print. The Route 
+command returns the routing table, and the user can make changes by Commands such as Route Add, 
+Route Delete, and Route Change, which allows modifying the routing table as a requirement.
+
+8. ARP
+ARP stands for Address Resolution Protocol. Although network communications can readily be thought 
+of as an IP address, the packet delivery depends ultimately on the media access control (MAC). This is 
+where the protocol for address resolution comes into effect. You can add the remote host IP address, 
+which is an arp -a command, in case you have issues to communicate with a given host. The ARP 
+command provides information like Address, Flags, Mask, IFace, Hardware Type, Hardware Address, 
+etc.
+
+9. Path Ping
+We discussed the Ping command and the Tracert command. There are similarities between these 
+commands. The pathping command which provides a combination of the best aspects of Tracert and 
+Ping.
+This command takes 300 seconds to gather statistics and then returns reports on latency and packet 
+loss statistics at intermediate hops between the source and the target in more detail than those reports 
+provided by Ping or Tracert commands.
+The syntax for path ping is as follows:
+path ping [-n] [-h] [-g <Hostlist>] [-p <Period>] [-q <NumQueries> [-
+w <timeout>] [-i <IPaddress>] [-4 <IPv4>] [-6 <IPv6>][<TargetName>]
+ N: Prevents path ping functioning from attempting to resolve routers’ IP addresses to their 
+names.
+ -h MaxHops: This tracert option specifies the maximum number of hops in the search for the 
+target. If the MaxHops option is not specified the target has not been found by 30 hops then 
+the tracert command will stop looking.
+ -w timeout: A timeout value must be specified while executing this ping command. It adjusts 
+the amount of time in milliseconds.
+ -ip <IPaddress>: Indicates the source address.
+ target: This is the destination IP address or a hostname user want to ping.
+
+We could also focus on the networking architectures in which these types of networks can
+be implemented:
+
+1. PEER-TO-PEER NETWORKING – which might be implemented in a workgroup
+consisting of computers running Microsoft Windows 98 or Windows 2000
+Professional;
+
+2. SERVER-BASED NETWORKING – which might be based on the domain model of
+Microsoft Windows NT, the domain trees and forests of Active Directory in Windows
+2000, or another architecture such as Novell Directory Services (NDS) for Novell
+NetWare;
+
+3. TERMINAL-BASED NETWORKING – which might be the traditional host-based
+mainframe environment; the UNIX X Windows environment; the terminal services of
+Windows NT 4, Server Enterprise Edition; Windows 2000 Advanced Server; or Citrix
+MetaFrame.
+
+Conclusion: so, in this way we studied the basics of networking commands.
