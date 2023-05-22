@@ -1,0 +1,19 @@
+a = input("Enter data bits")
+print("Bits before stuffing: ", a)
+count = 0
+stuffed = 0
+b = list(a)
+for i in range(len(a)):
+    if a[i] == "1":
+        count = count + 1
+        if count == 5:
+            
+            count = 0
+            b.insert(i + 1 + stuffed, "0")
+            stuffed = stuffed + 1
+            
+    else:
+        count = 0
+b = "".join(b)
+print("Bits after stuffing: ", b)
+
